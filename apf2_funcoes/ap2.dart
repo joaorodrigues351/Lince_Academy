@@ -76,20 +76,25 @@ class _PilhaDeQuadrados extends StatelessWidget {
   final _Grupo grupo;
 
   static const double _passo = 15;
+  static const double _lado = 50;
+  static const double _ladoExterno = 100;
 
   @override
   Widget build(BuildContext context) {
+    final double ocupado = _lado + (grupo.cores.length - 1) * _passo;
+    final double inicio = (_ladoExterno - ocupado) / 2;
+
     return Container(
-      width: 100,
-      height: 100,
+      width: _ladoExterno,
+      height: _ladoExterno,
       margin: const EdgeInsets.all(8),
       color: grupo.fundo,
       child: Stack(
         children: [
           for (var i = 0; i < grupo.cores.length; i++)
             Positioned(
-              left: i * _passo,
-              top: i * _passo,
+              left: inicio + i * _passo,
+              top: inicio + i * _passo,
               child: Container(
                 width: 50,
                 height: 50,

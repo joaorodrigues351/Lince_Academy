@@ -56,8 +56,10 @@ class _FormatosDinamicosPageState extends State<FormatosDinamicosPage> {
       body: SafeArea(
         child: Column(
           children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
+            Wrap(
+              alignment: WrapAlignment.center,
+              spacing: 8,
+              runSpacing: 8,
               children: [
                 ElevatedButton(
                   onPressed: _alternarForma,
@@ -65,7 +67,6 @@ class _FormatosDinamicosPageState extends State<FormatosDinamicosPage> {
                     _ehCirculo ? 'Mudar para quadrado' : 'Mudar para círculo',
                   ),
                 ),
-                const SizedBox(width: 8),
                 ElevatedButton(
                   onPressed: _sortearCor,
                   child: const Text('Cor aleatoria'),
@@ -73,12 +74,14 @@ class _FormatosDinamicosPageState extends State<FormatosDinamicosPage> {
               ],
             ),
             const SizedBox(height: 24),
-            Container(
-              width: 100,
-              height: 100,
-              decoration: BoxDecoration(
-                color: _cor,
-                shape: _ehCirculo ? BoxShape.circle : BoxShape.rectangle,
+            Center(
+              child: Container(
+                width: 100,
+                height: 100,
+                decoration: BoxDecoration(
+                  color: _cor,
+                  shape: _ehCirculo ? BoxShape.circle : BoxShape.rectangle,
+                ),
               ),
             ),
           ],
