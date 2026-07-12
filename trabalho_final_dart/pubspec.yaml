@@ -1,0 +1,17 @@
+name: trabalho_final_dart
+description: >-
+  Relatorios de comparacao climatica entre Santa Catarina e Sao Paulo, a partir
+  dos arquivos CSV dos sensores meteorologicos.
+version: 1.0.0
+publish_to: none
+repository: https://github.com/joaorodrigues351/Lince_Academy
+
+environment:
+  sdk: ^3.12.2
+
+dependencies:
+  yaansi: ^1.2.0
+
+dev_dependencies:
+  lints: ^6.0.0
+  test: ^1.25.6
